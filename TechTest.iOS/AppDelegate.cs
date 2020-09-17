@@ -23,7 +23,7 @@ namespace TechTest.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            Messier16.Forms.iOS.Controls.Messier16Controls.InitAll();
+          
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

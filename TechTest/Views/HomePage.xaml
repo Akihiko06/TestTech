@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
 				 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 				 xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-				 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="clr-namespace:TechTest.Renderers" xmlns:messier16="clr-namespace:Messier16.Forms.Controls;assembly=Messier16.Forms.Controls"
+				 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="clr-namespace:TechTest.Renderers" 
+				
 			 mc:Ignorable="d"
 				 x:Class="TechTest.Views.HomePage">
 	
@@ -18,7 +19,7 @@
 		<StackLayout BackgroundColor="#5fa3d2"  Grid.Row="0" Grid.Column="0" Padding="30">
 			<Label VerticalOptions="CenterAndExpand" FontSize="Title" Text="Hello, what do you want to watch?" TextColor="White"></Label>
 			<Frame BackgroundColor="LightGray" Margin="13,10,13,0" HasShadow="False" BorderColor="LightGray" CornerRadius="20" Padding="0">
-				<controls:CustomSearchBar  HeightRequest="50" BorderColor="White" BackgroundColor="White" TextChanged="SearchBar_TextChanged" FontSize="Small"  Placeholder="Search" PlaceholderColor="White"></controls:CustomSearchBar>
+				<controls:CustomSearchBar  HeightRequest="50" BorderColor="White" BackgroundColor="White" TextChanged="SearchBar_TextChanged" FontSize="Small"  Placeholder="Search" PlaceholderColor="LightGray"></controls:CustomSearchBar>
 				<!--<SearchBar  HeightRequest="50" BackgroundColor="LightGray" VerticalOptions="CenterAndExpand" TextChanged="SearchBar_TextChanged" FontSize="Small" Placeholder="Search"></SearchBar>-->
 			</Frame>
 		</StackLayout>

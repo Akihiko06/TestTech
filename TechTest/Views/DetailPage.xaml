@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-			 xmlns:messier16="clr-namespace:Messier16.Forms.Controls;assembly=Messier16.Forms.Controls" xmlns:controls="clr-namespace:TechTest.Renderers"
+			 xmlns:controls="clr-namespace:TechTest.Renderers"
 			 mc:Ignorable="d"
              x:Class="TechTest.Views.DetailPage">
 
