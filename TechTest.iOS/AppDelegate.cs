@@ -27,6 +27,8 @@ namespace TechTest.iOS
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
+
+
         }
     }
 }

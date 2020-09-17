@@ -17,9 +17,10 @@
 
 		<StackLayout BackgroundColor="#5fa3d2"  Grid.Row="0" Grid.Column="0" Padding="30">
 			<Label VerticalOptions="CenterAndExpand" FontSize="Title" Text="Hello, what do you want to watch?" TextColor="White"></Label>
-			<!--<Frame BackgroundColor="Transparent" CornerRadius="25" Padding="0">-->
-				<SearchBar VerticalOptions="CenterAndExpand" TextChanged="SearchBar_TextChanged" HorizontalOptions="FillAndExpand" FontSize="Small" Placeholder="search" BackgroundColor="White"></SearchBar>
-			<!--</Frame>-->
+			<Frame BackgroundColor="LightGray" Margin="13,10,13,0" HasShadow="False" BorderColor="LightGray" CornerRadius="20" Padding="0">
+				<controls:CustomSearchBar  HeightRequest="50" BorderColor="White" BackgroundColor="White" TextChanged="SearchBar_TextChanged" FontSize="Small"  Placeholder="Search" PlaceholderColor="White"></controls:CustomSearchBar>
+				<!--<SearchBar  HeightRequest="50" BackgroundColor="LightGray" VerticalOptions="CenterAndExpand" TextChanged="SearchBar_TextChanged" FontSize="Small" Placeholder="Search"></SearchBar>-->
+			</Frame>
 		</StackLayout>
 
 		<StackLayout  BackgroundColor="#5fa3d2" Grid.Row="1" Grid.Column="0">
@@ -56,13 +57,13 @@
 									   BorderColor="#293646"
 									   BackgroundColor="#293646"
 									   VerticalOptions="FillAndExpand"
-									   HorizontalOptions="Start"
+									   HorizontalOptions="Center"
 									    Padding="0">
 
 											<Image Source="{Binding ImageUrl}" 
 											   Aspect="AspectFill"
-											   HeightRequest="150"
-											   WidthRequest="150"
+											   HeightRequest="120"
+											   WidthRequest="120"
 											   HorizontalOptions="Center" />
 										</Frame>
 											<StackLayout>
@@ -71,9 +72,11 @@
 											   FontAttributes="Bold"
 											   FontSize="Default"
 											   TextColor="White"
-											   HorizontalOptions="Start"
-											   VerticalOptions="Center" />
-												<messier16:RatingBar IsVisible="{Binding IsVisibleStar}" Rating="5" FilledImage="star_filled.png" Image="star.png" MaxRating="5" FillColor="Yellow"  HeightRequest="15" />
+											   HorizontalOptions="Center"
+											   VerticalOptions="Center" LineBreakMode="TailTruncation" />
+												<controls:RattingBar x:Name="customRattingBar1" HorizontalOptions="Center"  ImageWidth="15" ImageHeight="15"    SelectedStarValue="4"  
+												 FillStarImage="star_filled" EmptyStarImage="star"   />
+												<!--<messier16:RatingBar IsVisible="{Binding IsVisibleStar}" Rating="5" FilledImage="star_filled" Image="star" MaxRating="5" FillColor="Yellow"  HeightRequest="30" WidthRequest="200"/>-->
 										</StackLayout>
 									</StackLayout>
 								</DataTemplate>
@@ -106,14 +109,14 @@
 									   BorderColor="#293646"
 									   BackgroundColor="#293646"
 									   VerticalOptions="FillAndExpand"
-									   HorizontalOptions="Start"
+									   HorizontalOptions="Center"
 									    Padding="0">
 
 											<Image Source="{Binding ImageUrl}" 
 											   Aspect="AspectFill"
-											   HeightRequest="150"
-											   WidthRequest="150"
-											   HorizontalOptions="Center" />
+											   HeightRequest="120"
+											   WidthRequest="120"
+											   HorizontalOptions="CenterAndExpand" />
 										</Frame>
 											<StackLayout >
 
@@ -122,8 +125,10 @@
 											   FontSize="Default"
 											   TextColor="White"
 											   HorizontalOptions="Start"
-											   VerticalOptions="Center" />
-												<messier16:RatingBar IsVisible="{Binding IsVisibleStar}" Rating="5" FilledImage="star_filled.png" Image="star.png" MaxRating="5" FillColor="Yellow"  HeightRequest="15" />
+											   VerticalOptions="Center" LineBreakMode="TailTruncation" />
+												<!--<messier16:RatingBar IsVisible="{Binding IsVisibleStar}" Rating="5" FilledImage="star_filled" Image="star" MaxRating="5" FillColor="Yellow"  HeightRequest="30" WidthRequest="200" />-->
+												<controls:RattingBar x:Name="customRattingBar1" HorizontalOptions="Center"  ImageWidth="15" ImageHeight="15"  SelectedStarValue="5"  
+												 FillStarImage="star_filled" EmptyStarImage="star"   />
 										</StackLayout>
 
 
@@ -158,13 +163,13 @@
 									   BorderColor="#293646"
 									   BackgroundColor="#293646"
 									   VerticalOptions="FillAndExpand"
-									   HorizontalOptions="Start"
+									   HorizontalOptions="Center"
 									    Padding="0">
 
 											<Image Source="{Binding ImageUrl}" 
 											   Aspect="AspectFill"
-											   HeightRequest="150"
-											   WidthRequest="150"
+											   HeightRequest="120"
+											   WidthRequest="120"
 											   HorizontalOptions="Center" />
 										</Frame>
 											<StackLayout >
@@ -175,7 +180,9 @@
 											   TextColor="White"
 											   HorizontalOptions="Start"
 											   VerticalOptions="Center" />
-												<messier16:RatingBar IsVisible="{Binding IsVisibleStar}" Rating="5" FilledImage="star_filled.png" Image="star.png" MaxRating="5" FillColor="Yellow"  HeightRequest="15" />
+												<!--<messier16:RatingBar IsVisible="{Binding IsVisibleStar}" Rating="5" FilledImage="star_filled" Image="star" MaxRating="5" FillColor="Yellow"  HeightRequest="30"  WidthRequest="200"/>-->
+												<controls:RattingBar x:Name="customRattingBar1" HorizontalOptions="Center"  ImageWidth="15" ImageHeight="15"  SelectedStarValue="5"  
+												 FillStarImage="star_filled" EmptyStarImage="star"   />
 										</StackLayout>
 
 

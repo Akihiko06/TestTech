@@ -66,6 +66,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderers\CustomFrameRenderer.cs" />
+    <Compile Include="Renderers\CustomSearchBarRenderer .cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -141,19 +142,7 @@
     <BundleResource Include="Resources\star.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\star%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\star%403x.png" />
-  </ItemGroup>
-  <ItemGroup>
     <BundleResource Include="Resources\star_filled.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\star_filled%402x.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\star_filled%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\arrowback.png" />

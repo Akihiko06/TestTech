@@ -33,20 +33,34 @@ namespace TechTest.Views
 
 		private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
 		{
-			SearchBar searchBar = (SearchBar)sender;
-			if (searchBar.Text.Length >= 3)
+			try
 			{
-				//DisplayAlert("filtrar", "pelicula", "ok");
-				oHomeViewModel.FilterItemsName(searchBar.Text);
-
-			}
-			else {
-
-				if (searchBar.Text.Length == 0)
+				if (e.NewTextValue == null)
 				{
-					//DisplayAlert("RESETEAR", "pelicula", "ok");
-					oHomeViewModel.FilterItemsName(searchBar.Text);
+					oHomeViewModel.FilterItemsName("");
 				}
+				else
+				{
+					SearchBar searchBar = (SearchBar)sender;
+					if (searchBar.Text.Length >= 3)
+					{
+						//DisplayAlert("filtrar", "pelicula", "ok");
+						oHomeViewModel.FilterItemsName(searchBar.Text);
+
+					}
+					else
+					{
+
+						if (searchBar.Text.Length == 0)
+						{
+							//DisplayAlert("RESETEAR", "pelicula", "ok");
+							oHomeViewModel.FilterItemsName(searchBar.Text);
+						}
+					}
+				}
+			}
+			catch { 
+			
 			}
 
 		}

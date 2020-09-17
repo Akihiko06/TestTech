@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-			 xmlns:messier16="clr-namespace:Messier16.Forms.Controls;assembly=Messier16.Forms.Controls"
+			 xmlns:messier16="clr-namespace:Messier16.Forms.Controls;assembly=Messier16.Forms.Controls" xmlns:controls="clr-namespace:TechTest.Renderers"
 			 mc:Ignorable="d"
              x:Class="TechTest.Views.DetailPage">
 
@@ -17,15 +17,17 @@
 		</Grid.ColumnDefinitions>
 		
 		<Image  Grid.Row="0" Grid.Column="0"  x:Name="ImgTitle" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Image>
-		<ImageButton Source="arrowback.png" BackgroundColor="Transparent" Margin="10,20,0,0" Clicked="ImageButton_Clicked" HeightRequest="32" HorizontalOptions="Start" VerticalOptions="Start"></ImageButton>
+		<ImageButton Source="arrowback.png" BackgroundColor="Transparent" Margin="20,40,0,0" Clicked="ImageButton_Clicked" HeightRequest="32" HorizontalOptions="Start" VerticalOptions="Start"></ImageButton>
 
 		<StackLayout Grid.Row="1" Grid.Column="0">
 			<Label x:Name="Titulo" FontAttributes="Bold" TextColor="White" Margin="15,20,15,0" FontSize="Large" HorizontalOptions="Start"></Label>
 			<StackLayout Orientation="Horizontal" Margin="20">
-				<Frame CornerRadius="25" BackgroundColor="Gray" Padding="10" HorizontalOptions="Start">
+				<Frame CornerRadius="18" BackgroundColor="Gray" Padding="10" HorizontalOptions="StartAndExpand">
 					<Label Text="Watch Now" TextColor="White"></Label>
 				</Frame>
-				<messier16:RatingBar IsVisible="true" HorizontalOptions="EndAndExpand" Rating="5" FilledImage="star_filled.png" Image="star.png" MaxRating="5" FillColor="Yellow"  HeightRequest="15" WidthRequest="100" VerticalOptions="CenterAndExpand"/>
+				<controls:RattingBar x:Name="customRattingBar1" ImageWidth="15" ImageHeight="15"  SelectedStarValue="5"  
+												 FillStarImage="star_filled" EmptyStarImage="star"   HorizontalOptions="EndAndExpand" />
+				<!--<messier16:RatingBar IsVisible="true" HorizontalOptions="EndAndExpand" Rating="5" FilledImage="star_filled.png" Image="star.png" MaxRating="5" FillColor="Yellow"  HeightRequest="30" WidthRequest="200" VerticalOptions="CenterAndExpand"/>-->
 			</StackLayout>
 			<ScrollView>
 				<StackLayout>
