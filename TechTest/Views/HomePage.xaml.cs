@@ -63,6 +63,11 @@ namespace TechTest.Views
 			
 			}
 
+			carouselView.ScrollTo(2);
+			carouselView2.ScrollTo(2);
+			carouselView3.ScrollTo(2);
+
+
 		}
 	}
 }

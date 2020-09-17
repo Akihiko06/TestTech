@@ -39,7 +39,7 @@
 							  ItemsSource="{Binding FilterMoviesTop}"
 							  Margin="0"
 							  CurrentItem="{Binding Currentitem}"
-							  PeekAreaInsets="100" HeightRequest="230">
+							  PeekAreaInsets="110" HeightRequest="230">
 								<CarouselView.ItemsLayout>
 									<LinearItemsLayout  Orientation="Horizontal" ItemSpacing="5" />
 							</CarouselView.ItemsLayout>
@@ -91,7 +91,7 @@
 						</StackLayout>
 						<CarouselView x:Name="carouselView2"
 						HorizontalScrollBarVisibility="Never"
-                      ItemsSource="{Binding FilterMoviesUpcoming}" PeekAreaInsets="100"  HeightRequest="230" HorizontalOptions="FillAndExpand" >
+                      ItemsSource="{Binding FilterMoviesUpcoming}" PeekAreaInsets="110"  HeightRequest="230" HorizontalOptions="FillAndExpand" >
 							<CarouselView.ItemsLayout>
 									<LinearItemsLayout Orientation="Horizontal"  ItemSpacing="5" />
 							</CarouselView.ItemsLayout>
@@ -145,7 +145,7 @@
 						</StackLayout>
 						<CarouselView x:Name="carouselView3"
 						HorizontalScrollBarVisibility="Never"
-                      ItemsSource="{Binding FilterMoviesPopular}" PeekAreaInsets="100"   HeightRequest="230" HorizontalOptions="FillAndExpand" >
+                      ItemsSource="{Binding FilterMoviesPopular}" PeekAreaInsets="110"   HeightRequest="230" HorizontalOptions="FillAndExpand" >
 							<CarouselView.ItemsLayout>
 									<LinearItemsLayout  Orientation="Horizontal"  ItemSpacing="5" />
 							</CarouselView.ItemsLayout>
