@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+				 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+				 xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+				 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="clr-namespace:TechTest.Renderers" xmlns:messier16="clr-namespace:Messier16.Forms.Controls;assembly=Messier16.Forms.Controls"
+			 mc:Ignorable="d"
+				 x:Class="TechTest.Views.HomePage">
+	
+	<Grid RowSpacing="0" BackgroundColor="#293646">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="3*" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+
+		<StackLayout BackgroundColor="#5fa3d2"  Grid.Row="0" Grid.Column="0" Padding="30">
+			<Label VerticalOptions="CenterAndExpand" FontSize="Title" Text="Hello, what do you want to watch?" TextColor="White"></Label>
+			<!--<Frame BackgroundColor="Transparent" CornerRadius="25" Padding="0">-->
+				<SearchBar VerticalOptions="CenterAndExpand" TextChanged="SearchBar_TextChanged" HorizontalOptions="FillAndExpand" FontSize="Small" Placeholder="search" BackgroundColor="White"></SearchBar>
+			<!--</Frame>-->
+		</StackLayout>
+
+		<StackLayout  BackgroundColor="#5fa3d2" Grid.Row="1" Grid.Column="0">
+			
+			<controls:CustomFrame CornerRadius="30,30,0,0" BackgroundColor="#293646" Padding="10" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+				<ScrollView>
+					<StackLayout x:Name="FilterHide" Margin="0,10,0,0">
+						<StackLayout x:Name="stk1" IsVisible="{Binding IsVisiblestk1}">
+						<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+							<Label HorizontalOptions="StartAndExpand" Text="TOP RATED" TextColor="White" Margin="10,5,10,5"></Label>
+							<Label HorizontalOptions="EndAndExpand" Text="See all" TextColor="LightGray" Margin="10,5,10,5"></Label>
+						</StackLayout>
+							<CarouselView x:Name="carouselView"
+						      HorizontalScrollBarVisibility="Never"
+							  ItemsSource="{Binding FilterMoviesTop}"
+							  Margin="0"
+							  CurrentItem="{Binding Currentitem}"
+							  PeekAreaInsets="100" HeightRequest="230">
+								<CarouselView.ItemsLayout>
+									<LinearItemsLayout  Orientation="Horizontal" ItemSpacing="5" />
+							</CarouselView.ItemsLayout>
+							<CarouselView.ItemTemplate>
+								<DataTemplate>
+									<StackLayout Padding="8,0,8,0" >
+										<StackLayout.GestureRecognizers>
+												<TapGestureRecognizer Tapped="OnTapped" CommandParameter="{Binding .}"/>
+										</StackLayout.GestureRecognizers>
+											<!--<Label Text="{Binding Title}" TextColor="White"></Label>-->
+										<Frame 
+									   CornerRadius="10"
+									   IsClippedToBounds="True"
+									   Margin="5"
+									   HasShadow="False"
+									   BorderColor="#293646"
+									   BackgroundColor="#293646"
+									   VerticalOptions="FillAndExpand"
+									   HorizontalOptions="Start"
+									    Padding="0">
+
+											<Image Source="{Binding ImageUrl}" 
+											   Aspect="AspectFill"
+											   HeightRequest="150"
+											   WidthRequest="150"
+											   HorizontalOptions="Center" />
+										</Frame>
+											<StackLayout>
+
+												<Label Text="{Binding Name}" 
+											   FontAttributes="Bold"
+											   FontSize="Default"
+											   TextColor="White"
+											   HorizontalOptions="Start"
+											   VerticalOptions="Center" />
+												<messier16:RatingBar IsVisible="{Binding IsVisibleStar}" Rating="5" FilledImage="star_filled.png" Image="star.png" MaxRating="5" FillColor="Yellow"  HeightRequest="15" />
+										</StackLayout>
+									</StackLayout>
+								</DataTemplate>
+							</CarouselView.ItemTemplate>
+						</CarouselView>
+						</StackLayout>
+						<StackLayout  x:Name="stk2" IsVisible="{Binding IsVisiblestk2}">
+						<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+							<Label HorizontalOptions="StartAndExpand" Text="UPCOMING" TextColor="White" Margin="10,5,10,5"></Label>
+							<Label HorizontalOptions="EndAndExpand" Text="See all" TextColor="LightGray" Margin="10,5,10,5"></Label>
+						</StackLayout>
+						<CarouselView x:Name="carouselView2"
+						HorizontalScrollBarVisibility="Never"
+                      ItemsSource="{Binding FilterMoviesUpcoming}" PeekAreaInsets="100"  HeightRequest="230" HorizontalOptions="FillAndExpand" >
+							<CarouselView.ItemsLayout>
+									<LinearItemsLayout Orientation="Horizontal"  ItemSpacing="5" />
+							</CarouselView.ItemsLayout>
+							<CarouselView.ItemTemplate>
+								<DataTemplate>
+									<StackLayout Padding="8,0,8,0">
+										<StackLayout.GestureRecognizers>
+												<TapGestureRecognizer Tapped="OnTapped" CommandParameter="{Binding .}"/>
+										</StackLayout.GestureRecognizers>
+											<!--<Label Text="{Binding Title}"  TextColor="White"></Label>-->
+										<Frame 
+									   CornerRadius="10"
+									   IsClippedToBounds="True"
+									   Margin="5"
+									   HasShadow="False"
+									   BorderColor="#293646"
+									   BackgroundColor="#293646"
+									   VerticalOptions="FillAndExpand"
+									   HorizontalOptions="Start"
+									    Padding="0">
+
+											<Image Source="{Binding ImageUrl}" 
+											   Aspect="AspectFill"
+											   HeightRequest="150"
+											   WidthRequest="150"
+											   HorizontalOptions="Center" />
+										</Frame>
+											<StackLayout >
+
+												<Label Text="{Binding Name}" 
+											   FontAttributes="Bold"
+											   FontSize="Default"
+											   TextColor="White"
+											   HorizontalOptions="Start"
+											   VerticalOptions="Center" />
+												<messier16:RatingBar IsVisible="{Binding IsVisibleStar}" Rating="5" FilledImage="star_filled.png" Image="star.png" MaxRating="5" FillColor="Yellow"  HeightRequest="15" />
+										</StackLayout>
+
+
+									</StackLayout>
+								</DataTemplate>
+							</CarouselView.ItemTemplate>
+						</CarouselView>
+						</StackLayout>
+						<StackLayout  x:Name="stk3" IsVisible="{Binding IsVisiblestk3}">
+						<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+							<Label HorizontalOptions="StartAndExpand" Text="POPULAR" TextColor="White" Margin="10,5,10,5"></Label>
+							<Label HorizontalOptions="EndAndExpand" Text="See all" TextColor="LightGray" Margin="10,5,10,5"></Label>
+						</StackLayout>
+						<CarouselView x:Name="carouselView3"
+						HorizontalScrollBarVisibility="Never"
+                      ItemsSource="{Binding FilterMoviesPopular}" PeekAreaInsets="100"   HeightRequest="230" HorizontalOptions="FillAndExpand" >
+							<CarouselView.ItemsLayout>
+									<LinearItemsLayout  Orientation="Horizontal"  ItemSpacing="5" />
+							</CarouselView.ItemsLayout>
+							<CarouselView.ItemTemplate>
+								<DataTemplate>
+									<StackLayout Padding="8,0,8,0">
+										<StackLayout.GestureRecognizers>
+											<TapGestureRecognizer Tapped="OnTapped" CommandParameter="{Binding .}"/>
+										</StackLayout.GestureRecognizers>
+											<!--<Label Text="{Binding Title}"  TextColor="White"></Label>-->
+										<Frame 
+									   CornerRadius="10"
+									   IsClippedToBounds="True"
+									   Margin="5"
+									   HasShadow="False"
+									   BorderColor="#293646"
+									   BackgroundColor="#293646"
+									   VerticalOptions="FillAndExpand"
+									   HorizontalOptions="Start"
+									    Padding="0">
+
+											<Image Source="{Binding ImageUrl}" 
+											   Aspect="AspectFill"
+											   HeightRequest="150"
+											   WidthRequest="150"
+											   HorizontalOptions="Center" />
+										</Frame>
+											<StackLayout >
+
+											<Label Text="{Binding Name}" 
+											   FontAttributes="Bold"
+											   FontSize="Default"
+											   TextColor="White"
+											   HorizontalOptions="Start"
+											   VerticalOptions="Center" />
+												<messier16:RatingBar IsVisible="{Binding IsVisibleStar}" Rating="5" FilledImage="star_filled.png" Image="star.png" MaxRating="5" FillColor="Yellow"  HeightRequest="15" />
+										</StackLayout>
+
+
+									</StackLayout>
+								</DataTemplate>
+							</CarouselView.ItemTemplate>
+						</CarouselView>
+						</StackLayout>
+					</StackLayout>
+				</ScrollView>
+			</controls:CustomFrame>
+			
+		</StackLayout>
+	
+	</Grid>
+</ContentPage>

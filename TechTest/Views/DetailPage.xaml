@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:messier16="clr-namespace:Messier16.Forms.Controls;assembly=Messier16.Forms.Controls"
+			 mc:Ignorable="d"
+             x:Class="TechTest.Views.DetailPage">
+
+	<Grid RowSpacing="0" BackgroundColor="#293646">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="2*" />
+			<RowDefinition Height="3*" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		
+		<Image  Grid.Row="0" Grid.Column="0"  x:Name="ImgTitle" Aspect="Fill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"></Image>
+		<ImageButton Source="arrowback.png" BackgroundColor="Transparent" Margin="10,20,0,0" Clicked="ImageButton_Clicked" HeightRequest="32" HorizontalOptions="Start" VerticalOptions="Start"></ImageButton>
+
+		<StackLayout Grid.Row="1" Grid.Column="0">
+			<Label x:Name="Titulo" FontAttributes="Bold" TextColor="White" Margin="15,20,15,0" FontSize="Large" HorizontalOptions="Start"></Label>
+			<StackLayout Orientation="Horizontal" Margin="20">
+				<Frame CornerRadius="25" BackgroundColor="Gray" Padding="10" HorizontalOptions="Start">
+					<Label Text="Watch Now" TextColor="White"></Label>
+				</Frame>
+				<messier16:RatingBar IsVisible="true" HorizontalOptions="EndAndExpand" Rating="5" FilledImage="star_filled.png" Image="star.png" MaxRating="5" FillColor="Yellow"  HeightRequest="15" WidthRequest="100" VerticalOptions="CenterAndExpand"/>
+			</StackLayout>
+			<ScrollView>
+				<StackLayout>
+					<Label x:Name="overview"   TextColor="Gray" Margin="15,5" FontSize="Small"></Label>
+
+				<StackLayout x:Name="stkContentCredits" HeightRequest="80" HorizontalOptions="FillAndExpand">
+				
+				</StackLayout>
+
+				<Grid Margin="20,0">
+					<Grid.RowDefinitions>
+						<RowDefinition Height="*" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition  Width="*"/>
+						<ColumnDefinition Width="3*" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+
+					<Label Grid.Row="0" Grid.Column="0" Text="Studio" TextColor="White" FontSize="Small" FontAttributes="Bold"></Label>
+					<Label Grid.Row="0" Grid.Column="1" Text="{Binding Studio}" TextColor="White" FontSize="Small" FontAttributes="Bold"></Label>
+					<Label Grid.Row="0" Grid.Column="2" Text="" TextColor="White" FontAttributes="Bold"></Label>
+
+					<Label Grid.Row="1" Grid.Column="0" Text="Gender" TextColor="White" FontSize="Small" FontAttributes="Bold"></Label>
+					<Label Grid.Row="1" Grid.Column="1" Text="{Binding Genero}" TextColor="White" FontSize="Small" FontAttributes="Bold"></Label>
+					<Label Grid.Row="1" Grid.Column="2" Text="" TextColor="White" FontAttributes="Bold"></Label>
+
+					<Label Grid.Row="2" Grid.Column="0" Text="Release" TextColor="White" FontSize="Small" FontAttributes="Bold"></Label>
+					<Label Grid.Row="2" Grid.Column="1" Text="{Binding Date}" TextColor="White" FontSize="Small" FontAttributes="Bold"></Label>
+					<Label Grid.Row="2" Grid.Column="2" Text="" TextColor="White" FontAttributes="Bold"></Label>
+
+
+				</Grid>
+				</StackLayout>
+			</ScrollView>
+		</StackLayout>
+		
+	
+	</Grid>
+</ContentPage>
